@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
 * {
   margin: 0;
@@ -7,111 +7,161 @@
 }
 
 body {
-  font-family: 'Press Start 2P', cursive;
-  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  font-family: 'Roboto', sans-serif;
   color: #333;
-  text-align: center;
-  padding: 2rem;
-  transition: background-color 0.5s;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
 }
 
 header {
-  border-bottom: 2px solid #eee;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  background-color: #4267B2;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  animation: fadeIn 2s;
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-.between {
+header p {
+  font-size: 1.2rem;
+}
+
+header .btn {
+  background-color: #fff;
+  color: #4267B2;
+  border: none;
+  padding: 10px 20px;
   font-size: 1rem;
-  margin-bottom: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
-.difficulty, .again, .check, .guess {
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  margin: 0.5rem;
+header .btn:hover {
+  background-color: #e9ebee;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .left,
+main .right {
+  width: 100%;
+}
+
+main .left {
+  margin-bottom: 20px;
+}
+
+main .guess {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+main .btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.5rem;
+  background-color: #4267B2;
+  color: #fff;
   border: none;
   border-radius: 5px;
-  background: #f6d365;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-.difficulty:hover, .again:hover, .check:hover {
-  background: #fda085;
-  transform: translateY(-3px);
+main .btn:hover {
+  background-color: #365899;
+}
+
+main .message {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+main .label-score,
+main .label-highscore,
+main .timer {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .number {
   font-size: 4rem;
-  padding: 2rem;
-  border: 2px solid #333;
-  border-radius: 50%;
+  background-color: #4267B2;
+  color: #fff;
   width: 100px;
   height: 100px;
-  display: inline-block;
-  margin-top: 1rem;
-  background: #fff;
-  transition: width 0.3s, background-color 0.3s;
-}
-
-.main {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  border-radius: 50%;
+  margin: 20px auto;
 }
 
-.left, .right {
-  flex: 1;
-  min-width: 300px;
-}
-
-.guess {
-  font-size: 1.5rem;
-  width: 100px;
-  text-align: center;
-  border: 2px solid #333;
+select.difficulty {
+  margin: 20px 0;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  background: #fff;
-  transition: width 0.3s, background-color 0.3s;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
 }
 
-.message, .label-score, .label-highscore, .timer {
-  font-size: 1.2rem;
-  margin: 1rem 0;
-  animation: fadeInUp 2s;
+select.difficulty:focus {
+  border-color: #4267B2;
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+footer {
+  background-color: #4267B2;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  font-size: 1rem;
+  border-top: 1px solid #ccc;
 }
 
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+footer p {
+  margin: 0;
 }
 
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.8rem;
-  }
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-  .number {
-    font-size: 3rem;
-    width: 80px;
-    height: 80px;
-  }
-
-  .guess {
-    font-size: 1rem;
-    width: 80px;
-  }
+footer a:hover {
+  text-decoration: underline;
 }
